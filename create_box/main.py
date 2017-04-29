@@ -35,22 +35,31 @@ def create_empty_box(height, width, character):
         
     return box
 
-                        #######
-                        #NOTES#
-                        #######
+                      
 """
-Originally had the variable 'empty_string' in same name scope as variable 'name'.
-That didn't work. 
-I moved it under the first 'for loop' scope. It worked, but I'm not entirely sure why.
-"""
-"""
-Under the second for statement i had 'box += character' and the else statement 
-had the value 'box += empty_string'. 
-It did not work.
-I switched it around a bit, and it worked, but again, I'm not entirely sure why.
+#Alternative Solutions 1:
+
+def outline_box(height, width, character):
+    return (character * width +' \n') + (character + ' '*(width-2) + character +'\n')*(height-2) + (character * width)
 """
 
-
+#Alternative Solution 2:
+"""
+def outline_box(height, width, character):
+    full_row = character * width
+    edge_row = character + ' '*(width-2) + character
+    interior = ''
+    
+    if height < 1 or width < 1:
+        return 'Error'
+    for x in range(1, height-1):
+        interior += edge_row+'\n'
+    
+    box = (full_row+'\n') + (interior) + (full_row)
+    
+    return box
+"""    
+    
 if __name__ == '__main__':
     #print(create_box(3, 4, '*'))
     print(create_empty_box(3,4,'*'))
