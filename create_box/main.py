@@ -47,7 +47,7 @@ I moved it under the first 'for loop' scope. It worked, but I'm not entirely sur
 Under the second for statement i had 'box += character' and the else statement 
 had the value 'box += empty_string'. 
 It did not work.
-I switched it around a bit, and it worked, but aagain, I'm not entirely sure why.
+I switched it around a bit, and it worked, but again, I'm not entirely sure why.
 """
 
 
